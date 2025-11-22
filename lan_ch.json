@@ -1,0 +1,51 @@
+{
+  "server": {
+    "sys": "系统：",
+    "intro": "欢迎进入斗地主游戏\n这是服务器端.",
+    "invalid": "无效输入",
+    "prep": "正在准备牌局...",
+    "shuffle": "正在洗牌...",
+    "shuf_done": "洗牌完毕，准备发牌",
+    "start": "发牌完毕，游戏开始",
+    "p1": "玩家1",
+    "p2": "玩家1",
+    "p3": "玩家3",
+    "landlord": "地主: ",
+    "farmer": "农民: ",
+    "turn": "轮到",
+    "landlord_decision": "选择地主阶段。",
+    "nolandlord": "无地主产生，重新发牌",
+    "remain": "底牌：",
+    "begin": "游戏开始",
+    "end": "游戏结束",
+    "farmer_win": "农民胜利",
+    "landlord_win": "地主胜利",
+    "ServerListenningUDP": "服务器正在监听客户端广播IP请求，端口： "
+  },
+  "client": {
+    "UDPBroadcast_to_find_server_ip": "正在通过UDP广播寻找服务器IP，广播地址：",
+    "server_found": "找到服务器，地址：",
+    "server_not_found": "未找到服务器",
+    "intro": "欢迎进入斗地主游戏\n这是客户端.",
+    "ask": "确认还是过（Y/N）",
+    "invalid": "无效输入",
+    "choose_cards": "键入下标选择牌，输入同一下标两次即取消该牌，输入Y结束,输入N过",
+    "illegal": "出牌不符规则（已选中的牌将保留）"
+  },
+  "combos": {
+    "single": "单牌",
+    "pair": "对子",
+    "triple": "三张",
+    "three_and_single": "三带一",
+    "three_and_pair": "三带一对",
+    "continuous_single": "顺子",
+    "continuous_pair": "连对",
+    "airplane": "飞机",
+    "airplane_single": "飞机带翅膀（单）",
+    "airplane_pair": "飞机带翅膀（对）",
+    "bomb": "炸弹",
+    "four_and_double_single": "四带二（单）",
+    "four_and_double_pair": "四带二（对）",
+    "rocket": "火箭"
+  }
+}
