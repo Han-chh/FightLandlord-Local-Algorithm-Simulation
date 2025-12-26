@@ -11,35 +11,7 @@ def load_lan(lang_type):
 
 
 def get_lan(info):
-    print(lang)
     return lang["client"][info]
-
-
-def find_server_ip():
-    UDP_PORT = 41234
-    BROADCAST_IP = '255.255.255.255'
-
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    sock.settimeout(3)  # 等待响应 3 秒
-
-    message = "DISCOVER_SERVER".encode('utf-8')
-    sock.sendto(message, (BROADCAST_IP, UDP_PORT))
-    print(f"{get_lan("UDPBroadcast_to_find_server_ip")} {BROADCAST_IP}:{UDP_PORT}")
-
-    try:
-        while True:
-            data, addr = sock.recvfrom(1024)
-            response = data.decode('utf-8')
-            if response.startswith("SERVER_HERE"):
-                ws_port = response.split(':')[1]
-                print(f"{"server_found"} {addr[0]}:{ws_port}")
-                return addr[0], int(ws_port)
-    except socket.timeout:
-        print(get_lan("server_not_found"))
-    finally:
-        sock.close()
-
 
 
 class Card:

@@ -18,25 +18,6 @@ def load_lan(lang_type):  # load language json file
 def get_lan(info):  # get particular info by keys
     return lang["server"]["sys"] + lang["server"][info]
 
-def send_server_ip():
-    UDP_PORT = 41234
-    WS_PORT = 3000  # 假设 WebSocket 服务器在这个端口
-
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.bind(('', UDP_PORT))  # 监听所有网卡
-    print(f"{get_lan("ServerListenningUDP")}{UDP_PORT}")
-
-    while True:
-        data, addr = sock.recvfrom(1024)  # 接收数据
-        message = data.decode('utf-8')
-        print(f"Received '{message}' from {addr}")
-
-        if message == "DISCOVER_SERVER":
-            reply = f"SERVER_HERE:{WS_PORT}"
-            sock.sendto(reply.encode('utf-8'), addr)
-            print(f"Replied to {addr}")
-
-
 
 '''
 class Card
@@ -85,10 +66,6 @@ class Server:
     players: Player = []
     # remain 3 cards
     remain: Card = []
-
-    # ask players to accept the match
-    def ask_acceptation(self):
-        pass
 
     # configure the Server
     def __init__(self, players: list):
@@ -293,9 +270,6 @@ if __name__ == "__main__":
 
     load_lan("lan_ch")
     print(get_lan('intro'))
-
-    # start the UDP server to respond to clients' discovery
-    send_server_ip()
 
     while True:
         order = input()
