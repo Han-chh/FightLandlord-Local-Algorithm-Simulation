@@ -1,37 +1,33 @@
-# Fight Landlord Game Logic Simulation
+# Fight the Landlord — Local Algorithm Simulation
 
-## Project Description
+A Python simulation of Dou Dizhu rules and round state, focused on dealing, combination recognition, legal-play comparison, and win detection.
 
-This is a local Fight Landlord (Dou Dizhu) game logic algorithm simulation project. The project implements the core logic of the Fight Landlord game, including card creation, shuffling, distribution, player management, and game rule judgment. Through this project, you can simulate the complete process of a Fight Landlord game without actual network connections or user interfaces.
+[中文说明](README.md)
 
-## Key Features
+## Overview
 
-- **Local Simulation**: The project runs locally without network connections, fully simulating Fight Landlord game logic.
-- **Algorithm Implementation**: Includes complete Fight Landlord game algorithms, such as card pattern recognition and win/loss determination.
-- **Multi-language Support**: The project comes with a Chinese language pack JSON file (lan_ch.json) and supports multi-language extensions.
-- **Extensibility**: If network and UI components are integrated, it can become a complete playable Fight Landlord game.
+The repository models the game as algorithms rather than a graphical product. It creates a 54-card deck, deals three hands, assigns the landlord, recognizes common combinations, compares a candidate play with the table, and advances play/pass state until a hand is empty.
 
-## Installation Requirements
+## Screenshot
 
-- Python 3.x
-- No third-party packages required (all dependencies are Python standard library)
+![The program after shuffling and dealing, at the landlord-selection prompt](assets/screenshots/fightlandlord-terminal.png)
 
-## How to Run
+The screenshot comes directly from a real `server.py` terminal session. The repository does not contain a graphical game interface.
 
-Run the following command from the project root directory:
+## Capabilities
+
+- 54-card deck and three-player deal
+- Single, pair, triple, straight, bomb, rocket, and compound recognition
+- Legal-play and rank comparison
+- Landlord/farmer roles and round-state management
+- Pass reset and winner detection
+
+## Run
 
 ```bash
 python3 server.py
 ```
 
-## Multi-language Support
+## Current scope
 
-The project uses JSON files to store language packs, currently including a Chinese language pack (lan_ch.json). You can support other languages by modifying or adding new JSON files.
-
-## Extensibility
-
-This project is a pure logic simulation. If you want to expand it into a complete game, you can:
-
-- Add network modules for multiplayer online battles
-- Integrate graphical user interfaces (GUI)
-- Add more language packs
+The verified product boundary is a local terminal algorithm simulation. The separate `client.py` network entry is incomplete, so this README does not present the project as a working online game.
